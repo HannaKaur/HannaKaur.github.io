@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancify My Text</title>
+    <style>
+        textarea {
+            width: 100%;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fancify My Text</h1>
+
+    <fieldset>
+        <legend>Text</legend>
+        <textarea id="textInput" rows="4" cols="30"></textarea>
+    </fieldset>
+
+    <fieldset>
+        <legend>Fancify</legend>
+        <button onclick="applyBigger()">Bigger!</button>
+        <br>
+        <input type="radio" id="fancyRadio" name="styleType" onchange="applyStyles()"> FancyShmancy
+        <br>
+        <input type="radio" id="boringRadio" name="styleType" onchange="applyStyles()"> BoringBetty
+    </fieldset>
+
+    <button onclick="uppercaseAndMoo()">Moo</button>
+
+    <script>
+        function applyBigger() {
+            document.getElementById("textInput").style.fontSize = "24pt";
+        }
+
+        function applyStyles() {
+            var textArea = document.getElementById("textInput");
+            var fancyRadio = document.getElementById("fancyRadio");
+
+            if (fancyRadio.checked) {
+                textArea.style.fontWeight = "bold";
+                textArea.style.color = "blue";
+                textArea.style.textDecoration = "underline";
+            } else {
+                textArea.style.fontWeight = "normal";
+                textArea.style.color = "black";
+                textArea.style.textDecoration = "none";
+            }
+        }
+
+        function uppercaseAndMoo() {
+            var textArea = document.getElementById("textInput");
+            var text = textArea.value;
+            var sentences = text.split(".");
+            var lastSentence = sentences[sentences.length - 1];
+            var words = lastSentence.split(" ");
+            var lastWord = words[words.length - 1];
+
+            lastWord = lastWord.toUpperCase() + "-Moo";
+            words[words.length - 1] = lastWord;
+            sentences[sentences.length - 1] = words.join(" ");
+            textArea.value = sentences.join(".");
+        }
+    </script>
+</body>
+</html>
