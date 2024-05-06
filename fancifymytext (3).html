@@ -1,17 +1,78 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Fancify Shamcify</title>
+<head>
+    <title>Fancify My Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
 
-		<!-- link to your script file here -->
-		
-	</head>
+        h1 {
+            text-align: center;
+        }
 
-	<body>
-		<h1>Fancify my Text</h1>
-		
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
 
-		<!-- Your UI controls go here -->
-		
-	</body>
+        legend {
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button, input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        #textArea.fancy {
+            font-weight: bold;
+            color: blue;
+            text-decoration: underline;
+            font-size: 20px;
+        }
+
+        #textArea.boring {
+            font-weight: normal;
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        #textArea.italic {
+            font-style: italic;
+        }
+
+        #textArea.uppercase {
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fancify My Text</h1>
+
+    <fieldset>
+        <legend>Text</legend>
+        <textarea id="textArea" rows="4" cols="30"></textarea>
+    </fieldset>
+
+    <fieldset>
+        <legend>Fancify</legend>
+        <button id="biggerButton">Bigger!</button>
+        <br>
+        <input type="radio" id="fancyRadio" name="fancyStyle">
+        <label for="fancyRadio">FancyShmancy</label>
+        <input type="radio" id="boringRadio" name="fancyStyle" checked>
+        <label for="boringRadio">BoringBetty</label>
+        <br>
+        <button id="mooButton">Moo</button>
+    </fieldset>
+</body>
 </html>
